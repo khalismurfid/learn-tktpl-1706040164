@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Hello World</string>
+    <string name="app_title">TKBM-TPL 2020</string>
+    <string name="main_button">Click to get quotes</string>
+</resources>
