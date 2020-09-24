@@ -1,11 +1,9 @@
-package id.ac.ui.cs.mobileprogramming.helloworld
+package id.ac.ui.cs.mobileprogramming.khalismurfid.helloworld
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_main.*;
 import android.widget.TextView
 import android.widget.Button
-import android.view.View
 
 class MainActivity : AppCompatActivity() {
 
