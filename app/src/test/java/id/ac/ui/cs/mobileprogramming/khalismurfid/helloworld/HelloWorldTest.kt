@@ -1,6 +1,9 @@
 package id.ac.ui.cs.mobileprogramming.khalismurfid.helloworld
 
 import org.junit.Test
+import android.content.Context
+import androidx.test.core.app.ApplicationProvider
+import kotlinx.android.synthetic.main.activity_main.*
 import org.junit.Assert.*
 
 /**
@@ -10,7 +13,9 @@ import org.junit.Assert.*
  */
 class HelloWorldTest {
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun quotesIsShown() {
+        val activity = MainActivity()
+        // check if quotes is shown
+        assertNotEquals(activity.getQuotes(), "")
     }
 }
