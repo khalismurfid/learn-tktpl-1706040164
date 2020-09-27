@@ -22,12 +22,12 @@ class MainActivity : AppCompatActivity() {
 
      private fun buttonGetQuotesClickListener() {
         val quotesView : TextView = findViewById<TextView>(R.id.quotes)
-
         quotesView.text = getQuotes()
     }
 
     fun getQuotes() : String{
-        val quotes: List<String> =   listOf("The world isn’t perfect. But it’s there for us, doing the best it can….that’s what makes it so damn beautiful.",
+        val quotes: List<String> =
+            listOf("The world isn’t perfect. But it’s there for us, doing the best it can….that’s what makes it so damn beautiful.",
             "Knowing you’re different is only the beginning. If you accept these differences you’ll be able to get past them and grow even closer.", "Even if I die, you keep living okay? Live to see the end of this world, and to see why it was born. Live to see why a weak girl like me ended up here… And the reason you and I met.",
             "Giving up is what kills people.",
             "The ticket to the future is always open.",

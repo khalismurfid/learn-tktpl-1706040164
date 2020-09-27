@@ -16,6 +16,6 @@ class HelloWorldTest {
     fun quotesIsShown() {
         val activity = MainActivity()
         // check if quotes is shown
-        assertNotEquals(activity.getQuotes(), "")
+        assertEquals(activity.getQuotes(), "")
     }
 }
