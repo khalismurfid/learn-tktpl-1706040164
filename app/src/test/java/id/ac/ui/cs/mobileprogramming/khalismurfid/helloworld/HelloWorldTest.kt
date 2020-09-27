@@ -13,9 +13,9 @@ import org.junit.Assert.*
  */
 class HelloWorldTest {
     @Test
-    fun quotesIsShown() {
+    fun quotesMustReturnString() {
         val activity = MainActivity()
-        // check if quotes is shown
-        assertEquals(activity.getQuotes(), "")
+        // check if quotes is shown as String
+        assertEquals(activity.getQuotes()::class.simpleName, "String")
     }
 }
