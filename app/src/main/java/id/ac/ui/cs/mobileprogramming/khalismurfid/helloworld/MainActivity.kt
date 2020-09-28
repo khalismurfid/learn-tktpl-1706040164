@@ -8,12 +8,15 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var quotesView : TextView
+    private lateinit var  buttonGetQuotes: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val buttonGetQuotes: Button = findViewById(R.id.buttonGetQuotes)
+        buttonGetQuotes= findViewById(R.id.buttonGetQuotes)
+        quotesView = findViewById<TextView>(R.id.quotes)
         buttonGetQuotes.setOnClickListener{
             buttonGetQuotesClickListener()
         }
@@ -21,7 +24,6 @@ class MainActivity : AppCompatActivity() {
     }
 
      private fun buttonGetQuotesClickListener() {
-        val quotesView : TextView = findViewById<TextView>(R.id.quotes)
         quotesView.text = getQuotes()
     }
 
