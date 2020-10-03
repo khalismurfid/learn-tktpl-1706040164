@@ -1,11 +1,13 @@
 package id.ac.ui.cs.mobileprogramming.helloworld
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*;
 import android.widget.TextView
 import android.widget.Button
 import android.view.View
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,8 +16,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val buttonGetQuotes: Button = findViewById(R.id.buttonGetQuotes)
+        val buttonStartQuiz: Button = findViewById(R.id.buttonPlayQuiz)
+        val buttonExit: Button = findViewById(R.id.buttonExit)
+
         buttonGetQuotes.setOnClickListener{
             getQuotes()
+        }
+        buttonStartQuiz.setOnClickListener{
+            navigateToQuizActivity()
+        }
+        buttonExit.setOnClickListener{
+            exitActivity()
         }
 
     }
@@ -29,5 +40,18 @@ class MainActivity : AppCompatActivity() {
             "Hurt me with the truth. But never comfort me with a lie.",
             "You’ve got two legs and a heartbeat. What’s stopping you?")
         quotesView.text = quotes.shuffled().take(1)[0]
+    }
+
+    override fun onBackPressed() {
+        Toast.makeText(this@MainActivity, "Gunakan Tombol Kembali", Toast.LENGTH_SHORT).show()
+    }
+    private fun exitActivity(){
+        super.onBackPressed();
+    }
+
+    private fun navigateToQuizActivity(){
+        val intent = Intent(this, QuizActivity::class.java).apply {
+        }
+        startActivity(intent)
     }
 }

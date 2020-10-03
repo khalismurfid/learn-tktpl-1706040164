@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuizActivity">
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="15 Detik"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_margin="5dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/quiz_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/quiz_text"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginBottom="100dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center_horizontal" />
+
+    <EditText
+        android:id="@+id/answer"
+        android:background="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:padding="5dp"
+        android:width="200dp"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/quiz_text"
+        app:layout_constraintRight_toRightOf="@id/quiz_text"
+        app:layout_constraintTop_toBottomOf="@id/quiz_text"
+        android:hint="@string/quiz_input_hint"
+        android:inputType="text"
+        tools:ignore="LabelFor"
+        android:gravity="center_horizontal" />
+
+    <Button
+        android:id="@+id/buttonStartQuiz"
+        android:background="@color/colorPrimaryDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:width="200dp"
+        android:textSize="14sp"
+        android:text="@string/quiz_start_quiz"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="@id/answer"
+        app:layout_constraintRight_toRightOf="@id/answer"
+        app:layout_constraintTop_toBottomOf="@id/answer" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
