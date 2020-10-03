@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Hello World</string>
     <string name="app_title">TKBM-TPL 2020</string>
-    <string name="main_button">Click to get quotes</string>
+    <string name="quotes_button">Click to get quotes</string>
+    <string name="quiz_button">Click to play quiz</string>
+    <string name="quiz_text">Klik Mulai Quis untuk memulai Kuis !!</string>
+    <string name="quiz_input_hint">Ketik jawaban disini</string>
+    <string name="quiz_start_quiz">Mulai Kuis</string>
 </resources>

@@ -13,12 +13,14 @@
         android:text="Hello World!"
         android:textAlignment="center"
         android:textColor="@color/black"
+        android:layout_marginBottom="100dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center_horizontal" />
 
 
     <Button
@@ -27,13 +29,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:paddingRight="25dp"
-        android:paddingLeft="25dp"
-        android:text="@string/main_button"
+        android:width="200dp"
+        android:text="@string/quotes_button"
         android:textColor="@color/black"
         app:layout_constraintLeft_toLeftOf="@id/quotes"
         app:layout_constraintRight_toRightOf="@id/quotes"
         app:layout_constraintTop_toBottomOf="@id/quotes" />
+
+    <Button
+        android:id="@+id/buttonPlayQuiz"
+        android:background="@color/colorPrimaryDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:width="200dp"
+        android:text="@string/quiz_button"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="@id/buttonGetQuotes"
+        app:layout_constraintRight_toRightOf="@id/buttonGetQuotes"
+        app:layout_constraintTop_toBottomOf="@id/buttonGetQuotes" />
+
+    <Button
+        android:id="@+id/buttonExit"
+        android:background="@color/colorPrimaryDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:width="200dp"
+        android:text="Exit"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="@id/buttonPlayQuiz"
+        app:layout_constraintRight_toRightOf="@id/buttonPlayQuiz"
+        app:layout_constraintTop_toBottomOf="@id/buttonPlayQuiz" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
