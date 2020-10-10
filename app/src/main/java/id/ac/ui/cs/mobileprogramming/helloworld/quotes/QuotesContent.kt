@@ -57,6 +57,18 @@ object QuotesContent {
             "It is at the moment of death that humanity has value.",
             "Fighting for others, but not yourself, is nothing but hypocrisy."
         )
+        ITEM_QUOTES_DUMMY["Spongebob"] = listOf(
+            "Is mayonnaise an instrument?",
+            "It's just a cruel reminder that I'm single and likely to remain that way forever.",
+            "Hmmm, a five-letter word for happiness...money.",
+            "Goodbye everyone, I'll remember you all in therapy."
+        )
+        ITEM_QUOTES_DUMMY["Haikyuu"] = listOf(
+            "The future belongs to those who believe in the beauty of their dreams.”",
+            "Before my eyes, it blocks my path. A high, high wall. What sort of scene is on the other side? What will I be able to see there? “The view from the top”. A scenery I will never be able to see on my own. But if I’m not alone, then… I might be able to see it.”",
+            "Do you need a reason to not want to lose?",
+            "There’s no guarantee that the weapon that worked first will continue working until the end. I have to keep moving forward. I have to keep going! My greatest weapon is not getting caught!"
+        )
     }
     private fun createQuotesItem(position: Int, title: String, details: List<String>): QuotesItem {
         return QuotesItem(position.toString(), title, details)
