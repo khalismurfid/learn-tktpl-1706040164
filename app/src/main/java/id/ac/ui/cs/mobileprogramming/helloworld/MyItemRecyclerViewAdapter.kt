@@ -33,7 +33,7 @@ class MyItemRecyclerViewAdapter(
         holder.contentView.text = item.title
         holder.itemView.setOnClickListener{
             viewModel?.setQuotes(item.details)
-            (holder.itemView.context as FragmentActivity).supportFragmentManager.beginTransaction().replace(R.id.quotes_list_fragment, QuotesFragment()).commit()
+            (holder.itemView.context as FragmentActivity).supportFragmentManager.beginTransaction().replace(R.id.quotes_list_fragment, QuotesFragment()).addToBackStack(null).commit()
         }
     }
 

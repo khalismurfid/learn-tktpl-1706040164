@@ -13,13 +13,4 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         supportFragmentManager.beginTransaction().replace(R.id.quotes_list_fragment, ItemQuotesFragment()).commit()
     }
-
-    override fun onBackPressed() {
-        if(supportFragmentManager.findFragmentById(R.id.quotes_list_fragment) is QuotesFragment){
-            supportFragmentManager.beginTransaction().replace(R.id.quotes_list_fragment, ItemQuotesFragment()).commit()
-        } else{
-            super.onBackPressed()
-        }
-    }
-
 }
