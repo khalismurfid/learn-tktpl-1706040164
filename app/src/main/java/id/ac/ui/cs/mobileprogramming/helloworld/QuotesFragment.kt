@@ -28,7 +28,6 @@ import androidx.lifecycle.ViewModelProviders
         val rootView: View = inflater.inflate(R.layout.fragment_quotes, container, false)
         val linearLayout: LinearLayout = rootView.findViewById(R.id.quotes_details_linear)
 
-
         viewModel.quotes.observe(this,
             Observer<List<String>> { quotesList ->
                 for (quotes in quotesList){
@@ -47,14 +46,7 @@ import androidx.lifecycle.ViewModelProviders
                     linearLayout.addView(textView)
                 }
             })
-
         return rootView
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(QuotesViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
 }

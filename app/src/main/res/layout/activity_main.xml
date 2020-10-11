@@ -6,10 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
     <FrameLayout
         android:id="@+id/quotes_list_fragment"
-        android:name="id.ac.ui.cs.mobileprogramming.helloworld.ItemQuotesFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
