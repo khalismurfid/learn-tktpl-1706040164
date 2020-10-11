@@ -6,4 +6,14 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/quotes_details_title"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:textSize="26sp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"/>
 </LinearLayout>

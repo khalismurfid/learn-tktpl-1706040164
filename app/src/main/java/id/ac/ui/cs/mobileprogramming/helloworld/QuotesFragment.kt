@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import id.ac.ui.cs.mobileprogramming.helloworld.quotes.QuotesContent
 
 
  class QuotesFragment : Fragment() {
@@ -27,10 +28,10 @@ import androidx.lifecycle.ViewModelProviders
         viewModel = ViewModelProviders.of(activity!!).get(QuotesViewModel::class.java)
         val rootView: View = inflater.inflate(R.layout.fragment_quotes, container, false)
         val linearLayout: LinearLayout = rootView.findViewById(R.id.quotes_details_linear)
-
+        val titleView: TextView = rootView.findViewById(R.id.quotes_details_title)
         viewModel.quotes.observe(this,
-            Observer<List<String>> { quotesList ->
-                for (quotes in quotesList){
+            Observer<QuotesContent.QuotesItem> { quotesItem ->
+                for (quotes in quotesItem.details){
                     val textView = TextView(activity).apply {
                         layoutParams = LinearLayout.LayoutParams(
                             LinearLayout.LayoutParams.MATCH_PARENT,
@@ -45,6 +46,7 @@ import androidx.lifecycle.ViewModelProviders
                     }
                     linearLayout.addView(textView)
                 }
+                titleView.text = quotesItem.title
             })
         return rootView
     }
