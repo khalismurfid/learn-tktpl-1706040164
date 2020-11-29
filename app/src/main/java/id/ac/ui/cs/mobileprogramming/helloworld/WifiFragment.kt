@@ -8,6 +8,7 @@ import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.net.wifi.WifiManager
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,7 +18,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.github.kittinunf.fuel.core.Response
+import com.github.kittinunf.fuel.gson.jsonBody
+import com.github.kittinunf.fuel.httpGet
+import com.github.kittinunf.fuel.httpPost
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.fragment_wifi_list.*
+import org.json.JSONObject
 
 /**
  * A fragment representing a list of Items.
@@ -26,6 +34,7 @@ class WifiFragment : Fragment() {
 
     private var columnCount = 1
     private lateinit var wifiManager: WifiManager
+    private var wifiList : MutableList<String>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +48,9 @@ class WifiFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_wifi_list, container, false)
-
+        activity?.sendWifi?.setOnClickListener {
+            sendToRequestBin()
+        }
         wifiManager = activity?.applicationContext?.getSystemService(Context.WIFI_SERVICE) as WifiManager
         if (!checkIfAlreadyHavePermission()) {
             requestForSpecificPermission();
@@ -118,13 +129,35 @@ class WifiFragment : Fragment() {
 
     private fun scanSuccess() {
         val results = wifiManager.scanResults
+        wifiList = mutableListOf<String>()
         val adapterList =  mutableListOf<String>()
         for (res in results) {
             adapterList.add(res.SSID)
+            wifiList!!.add(res.SSID)
         }
         list.layoutManager = LinearLayoutManager(activity?.applicationContext)
         val recyclerAdapter =  MyWifiRecyclerViewAdapter(adapterList)
         list.adapter = recyclerAdapter
+        if(wifiList!!.isNotEmpty()){
+            activity?.sendWifi?.isEnabled=true
+        }
+    }
+
+    private fun sendToRequestBin(){
+        val bodyJson = JSONObject("""{"wifi":${wifiList.toString()}}""")
+        val httpAsync = "https://0290ef178f1bf33568189e45e0165eb8.m.pipedream.net/"
+            .httpPost().jsonBody(bodyJson).response {
+                request, response, result ->
+            when(result.component2() ) {
+                null -> {
+                    val ex = result.get()
+                }
+                else -> {
+                    Log.e("fail", "${response}")
+                }
+            }
+        }
+        httpAsync.join()
     }
 
     private fun scanFailure() {
