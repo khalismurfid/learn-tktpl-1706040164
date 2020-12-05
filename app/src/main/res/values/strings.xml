@@ -2,4 +2,6 @@
     <string name="app_name">Hello World</string>
     <string name="app_title">TKBM-TPL 2020</string>
     <string name="main_button">Click to get quotes</string>
+    <string name="submit_quotes">Submit Quotes</string>
+    <string name="masukan_quotes_mu">Masukan Quotes mu</string>
 </resources>

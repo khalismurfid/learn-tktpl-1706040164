@@ -15,6 +15,7 @@
         android:textColor="@color/black"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
+        android:layout_marginBottom="200dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -34,6 +35,35 @@
         app:layout_constraintLeft_toLeftOf="@id/quotes"
         app:layout_constraintRight_toRightOf="@id/quotes"
         app:layout_constraintTop_toBottomOf="@id/quotes" />
+
+    <EditText
+        android:id="@+id/input_quotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:paddingRight="25dp"
+        android:paddingLeft="25dp"
+        app:layout_constraintLeft_toLeftOf="@id/buttonGetQuotes"
+        app:layout_constraintRight_toRightOf="@id/buttonGetQuotes"
+        app:layout_constraintTop_toBottomOf="@id/buttonGetQuotes"
+        android:hint="@string/masukan_quotes_mu"
+        android:autofillHints="" />
+
+    <Button
+        android:id="@+id/buttonSubmitQuotes"
+        android:background="@color/colorAccent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingRight="25dp"
+        android:paddingLeft="25dp"
+        android:text="@string/submit_quotes"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="@id/input_quotes"
+        app:layout_constraintRight_toRightOf="@id/input_quotes"
+        app:layout_constraintTop_toBottomOf="@id/input_quotes" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
